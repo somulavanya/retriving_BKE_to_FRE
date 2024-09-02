@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+{% block title %}
+<title>Add Flights</title>
+{% endblock %}
+{% block body_block %}
+<center>
+    <form  method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <h1><u>Flight Adding form</u> </h1>
+        {{EFDO.as_p}}
+        <input type="submit" value="Add flights" class="btn btn-success">
+    </form><br><br>
+    <a href="{% url 'view_all_flights'%}">
+    <input type="submit" value="view all flights"class='btn btn-primary'></a>
+
+</center>
+{% endblock %}

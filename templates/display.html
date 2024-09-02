@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}<title>dispaly page</title>{% endblock%} 
+{% block body_block %}
+<center>
+    <h1>Display Flights</h1>
+<table border="5px">
+<tr>
+    <th>flight_number</th>
+    <th>airline_name</th>
+    <th>source</th>
+    <th>no_of_seats available</th>
+    <th>source_code</th>
+    <th>Destination</th>
+    <th>destination_code</th>
+    <th>arrival_time</th>
+    <th>departure_time</th>
+</tr>
+ {% for flights in flwo  %}
+ <tr>
+    <td>{{flights.flight_number}}</td>
+    <td>{{flights.airline_name}}</td>
+    <td>{{flights.source}}</td>
+    <td>{{flights.No_of_seats_available}}</td>
+    <td>{{flights.source_code}}</td>
+    <td>{{flights.destination}}</td>
+    <td>{{flights.destination_code}}</td>
+    <td>{{flights.arraival_time}}</td>
+    <td>{{flights.depature_time}}</td>
+ </tr>
+ {% endfor %}
+</table><br><br>
+<a href="{% url 'Add_flights'%}">
+    <input type="submit" value="Add Flights" class="btn btn-danger"></a>
+</center>
+
+{% endblock%}
